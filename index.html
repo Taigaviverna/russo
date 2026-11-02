@@ -257,6 +257,23 @@ main,.top,footer{position:relative;z-index:1}
 .contest .ic{flex:0 0 40px;width:40px;height:40px;color:var(--neon);filter:drop-shadow(0 0 8px rgba(180,77,255,.8))}
 .contest .ic svg{width:100%;height:100%}
 @media (prefers-reduced-motion:reduce){.ach-wide,.link-card,.copy{transition:none}}
+/* альянс */
+.fact.link{font:inherit;color:inherit;cursor:pointer;display:block;width:100%;border-color:rgba(180,77,255,.55);box-shadow:0 0 14px rgba(180,77,255,.18)}
+.fact.link em{display:block;font-style:normal;font-size:12px;color:var(--neon);margin-top:2px;transition:transform .3s}
+.fact.link:hover,.fact.link:active{border-color:var(--neon);box-shadow:0 0 22px rgba(180,77,255,.5);transform:translateY(-2px)}
+.fact.link:hover em{transform:translateX(4px)}
+h1.hero.alhero{margin-top:4vh;letter-spacing:.22em;font-size:clamp(26px,8vw,52px)}
+@media (min-width:1000px){h1.hero.alhero{font-size:52px;margin-inline:0}}
+#alliance .facts{margin-top:8px;margin-bottom:26px}
+.fams{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:14px}
+.fam .fh{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.fam .fe{font-size:22px}
+.fam .fh b{font-family:"Playfair Display",Georgia,serif;font-size:20px;color:#fff}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:11px 0;border-top:1px solid var(--line)}
+.rn{font-weight:600;color:#fff}
+.chip.soft{border-color:var(--line);color:var(--muted);background:transparent}
+.coord{text-align:center;border-color:rgba(180,77,255,.6);box-shadow:0 0 22px rgba(180,77,255,.25)}
+.coord .cname{font-size:26px;margin-top:4px;text-shadow:0 0 14px rgba(180,77,255,.6)}
 .oath{font-style:italic;border-left:3px solid var(--neon);padding-left:16px}
 footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0}
 </style>
@@ -297,7 +314,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0}
     <div class="fact"><span>Национальность</span><b>Итальянская</b></div>
     <div class="fact"><span>Основатель</span><b>Alberto Russo</b></div>
     <div class="fact"><span>Директор</span><b>Taiga Russo</b></div>
-    <div class="fact"><span>Альянс</span><b>Confederazione</b></div>
+    <button class="fact link" data-go="alliance" type="button"><span>Альянс</span><b>Confederazione</b><em>Открыть →</em></button>
     <div class="fact"><span>Членов семьи</span><b id="memberCount">6</b></div>
   </div>
 
@@ -495,6 +512,8 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0}
     </ul>
   </div>
 
+  <div class="pills" style="margin-top:12px"><button class="pill" data-go="alliance">Страница альянса →</button></div>
+
   <h3>Список дружественных семей</h3>
   <div class="card">
     <ul class="clean">
@@ -614,6 +633,192 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0}
     <div class="card person"><div class="pn">Kio Hatake</div><p class="role-text">ранее Главный Модератор Discord Arizona RP Tucson, ныне Куратор Модерации</p></div>
     <div class="card person"><div class="pn">Taiga Russo</div><p class="role-text">Заместитель Главного Модератора Discord Arizona RP Tucson, также бывший ВрИО Заместителя Главного Модератора Discord Arizona RP Mobile 1</p></div>
     <div class="card person"><div class="pn">Wildan Russo</div><p class="role-text">Куратор Модерации Discord Arizona RP Tucson</p></div>
+  </div>
+</section>
+
+<!-- АЛЬЯНС -->
+<section id="alliance">
+  <div class="pills"><button class="pill" data-go="home">← Главная</button></div>
+  <h1 class="hero alhero">Confederazione</h1>
+  <p class="tagline">Альянс семей · Arizona RP · Tucson</p>
+  <div class="divider"></div>
+  <div class="facts">
+    <div class="fact"><span>Создан</span><b>23.08.2026</b></div>
+    <div class="fact"><span>Семей в альянсе</span><b>3</b></div>
+    <div class="fact"><span>Координатор</span><b>Taiga Russo</b></div>
+    <div class="fact"><span>Основатель</span><b>Russo</b></div>
+    <div class="fact"><span>Участники</span><b>Russo · Embraer · Peppers</b></div>
+  </div>
+  <div class="ach-grid">
+    <button class="ach-card" data-go="al-charter"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h8l4 4v14H7zM15 3v4h4M10 12h6M10 16h6"/></svg></span><b>Положение об альянсе</b><span class="d">Структура, полномочия и порядок взаимодействия</span><span class="go">Открыть →</span></button>
+    <button class="ach-card" data-go="al-council"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9.5" r="2.5"/><path d="M3 20c0-3.5 3-5.5 6-5.5s6 2 6 5.5M15.5 14.8c3-.4 5.5 1.3 5.5 4.2"/></svg></span><b>Совет Альянса I созыва</b><span class="d">Координатор, советники и помощники</span><span class="go">Открыть →</span></button>
+    <button class="ach-card" data-go="al-leaders"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 10H5z"/><path d="M5 21h14"/></svg></span><b>Руководство семей</b><span class="d">Лидеры и заместители Embraer и Peppers</span><span class="go">Открыть →</span></button>
+  </div>
+</section>
+
+<section id="al-charter">
+  <h2>Положение об альянсе «Confederazione»</h2>
+  <p class="muted" style="margin-bottom:16px">Общие положения, структура и порядок взаимодействия · авторство: Taiga Russo</p>
+  <div class="pills"><button class="pill" data-go="alliance">← Альянс</button><button class="pill on" data-go="al-charter">Положение</button><button class="pill" data-go="al-council">Совет</button><button class="pill" data-go="al-leaders">Руководство семей</button></div>
+  <details>
+    <summary>I. Общие положения</summary>
+    <div class="body">
+      <p>1. Альянс «Confederazione» является объединением семей, заключивших соглашение о сотрудничестве, взаимной поддержке и координации.</p>
+      <p>2. Каждая семья-участник сохраняет полную самостоятельность во внутренних вопросах.</p>
+      <p>3. Альянс не вмешивается во внутреннее управление семей, если иное не предусмотрено настоящим Положением либо не согласовано руководством соответствующей семьи.</p>
+      <p>4. Основными принципами Альянса являются взаимное уважение, сотрудничество, взаимопомощь, координация, сохранение самостоятельности семей и защита общих интересов Альянса.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>II. Структура альянса</summary>
+    <div class="body">
+      <p>Структура Альянса включает:</p>
+      <p>1. Координатора Альянса;</p>
+      <p>2. Советников Альянса;</p>
+      <p>3. Помощников советников;</p>
+      <p>4. Представителей семей-участников.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>III. Координатор альянса</summary>
+    <div class="body">
+      <p>1. Координатором Альянса является Директор семьи «Russo Dynasty».</p>
+      <p>2. Координатор осуществляет общую координацию деятельности Альянса.</p>
+      <p>3. Координатор организует взаимодействие между семьями, координирует совместные инициативы, предоставляет руководителям семей рекомендации и консультации, оказывает содействие в разрешении семейных вопросов, организует общие собрания и саммиты, обеспечивает взаимодействие между структурами Альянса и следит за его общим развитием.</p>
+      <p>4. Координатор не обладает полномочиями непосредственно управлять руководством семей-участников, отдавать им обязательные распоряжения либо вмешиваться в их внутреннее управление.</p>
+      <p>5. Решения, касающиеся исключительно внутренней деятельности конкретной семьи, принимаются руководством соответствующей семьи самостоятельно.</p>
+      <p>6. Координатор вправе давать рекомендации, предлагать варианты решения и оказывать содействие, однако окончательное решение по внутренним вопросам остаётся за руководством соответствующей семьи.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>IV. Советники альянса</summary>
+    <div class="body">
+      <p>1. Советники являются выборными представителями семей-участников Альянса.</p>
+      <p>2. От каждой семьи может быть выдвинуто не более 4 кандидатов.</p>
+      <p>3. По итогам выборов полномочия получают 2 кандидата, набравшие наибольшее количество голосов.</p>
+      <p>4. Остальные 2 кандидата занимают места в резерве советников.</p>
+      <p>5. Срок полномочий советника составляет 35 календарных дней.</p>
+      <p>6. После окончания срока полномочий проводятся новые выборы.</p>
+      <p>7. Действующий советник вправе повторно выдвигать свою кандидатуру, если иное не установлено настоящим Положением.</p>
+      <h3>Полномочия советника</h3>
+      <p>1. Участвовать в обсуждении вопросов, касающихся деятельности Альянса.</p>
+      <p>2. Представлять мнение своей семьи по вопросам развития Альянса.</p>
+      <p>3. Вносить предложения по изменению и дополнению работы Альянса.</p>
+      <p>4. Инициировать обсуждение вопросов, представляющих интерес для нескольких семей.</p>
+      <p>5. Участвовать в подготовке совместных мероприятий и инициатив.</p>
+      <p>6. Участвовать в разрешении спорных ситуаций между участниками разных семей.</p>
+      <p>7. Предлагать Координатору варианты решения проблем, возникающих внутри Альянса.</p>
+      <p>8. Запрашивать у представителей Альянса информацию, необходимую для решения общих вопросов, если её предоставление не затрагивает внутреннюю конфиденциальную информацию семьи.</p>
+      <p>9. Участвовать в подготовке проектов решений, соглашений и иных документов Альянса.</p>
+      <p>10. Осуществлять контроль за выполнением принятых Альянсом совместных договорённостей в пределах своей компетенции.</p>
+      <p>11. Представлять предложения по кандидатам на расширение Альянса.</p>
+      <p>12. Информировать Координатора о систематических проблемах во взаимодействии между семьями.</p>
+      <h3>Ограничения советника</h3>
+      <p>1. Советник не получает права отдавать распоряжения руководству любой семьи.</p>
+      <p>2. Советник не вправе самостоятельно принимать решения от имени Альянса, если такие полномочия прямо не предоставлены ему настоящим Положением.</p>
+      <p>3. Советник не вправе вмешиваться во внутреннюю кадровую, финансовую или управленческую деятельность семьи.</p>
+      <p>4. При рассмотрении совместных вопросов советник обязан учитывать интересы Альянса наряду с интересами своей семьи.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>V. Резерв советников</summary>
+    <div class="body">
+      <p>1. Кандидаты, занявшие 3-е и 4-е места на выборах, зачисляются в резерв.</p>
+      <p>2. Резерв используется для замещения освободившегося места советника.</p>
+      <p>3. При досрочном прекращении полномочий советника его место занимает кандидат из резерва в порядке, установленном результатами выборов.</p>
+      <p>4. Замещающий советник осуществляет полномочия до окончания первоначального срока полномочий соответствующего советника.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>VI. Помощник советников</summary>
+    <div class="body">
+      <p>1. Каждые два советника одной семьи имеют одного помощника.</p>
+      <p>2. Помощник назначается непосредственно советниками соответствующей семьи.</p>
+      <p>3. Срок полномочий помощника совпадает со сроком полномочий советников, назначивших его.</p>
+      <p>4. Помощник освобождается от должности по решению советников, по собственному желанию либо с окончанием срока полномочий советников.</p>
+      <h3>Задачи помощника</h3>
+      <p>1. Помогать советникам в подготовке материалов.</p>
+      <p>2. Участвовать в организации мероприятий и заседаний.</p>
+      <p>3. Собирать информацию и предложения от членов своей семьи.</p>
+      <p>4. Помогать советникам поддерживать связь с руководством своей семьи.</p>
+      <p>5. Выполнять поручения советников в рамках их полномочий.</p>
+      <p>6. При необходимости временно представлять позицию советников по техническим и организационным вопросам.</p>
+      <p>7. Помощник не получает самостоятельных полномочий советника, если такие полномочия отдельно ему не переданы.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>VII. Взаимодействие семей</summary>
+    <div class="body">
+      <p>1. Каждая семья самостоятельно определяет своего представителя для взаимодействия с Альянсом.</p>
+      <p>2. Руководители семей поддерживают связь с Координатором и представителями Альянса.</p>
+      <p>3. Важные вопросы, затрагивающие несколько семей, рекомендуется выносить на общее обсуждение.</p>
+      <p>4. Спорные вопросы между семьями по возможности решаются путём переговоров.</p>
+      <p>5. При невозможности самостоятельного разрешения спора стороны вправе обратиться к Координатору.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>VIII. Общие собрания и саммиты</summary>
+    <div class="body">
+      <p>1. Координатор вправе инициировать проведение общего саммита Альянса.</p>
+      <p>2. На саммит могут приглашаться руководители семей, советники, помощники советников и иные доверенные представители семей.</p>
+      <p>3. На саммитах могут обсуждаться развитие Альянса, состояние семей, совместные мероприятия, проблемы взаимодействия, кадровые вопросы, расширение Альянса и общие проекты.</p>
+      <p>4. Итоги саммита фиксируются в установленном порядке.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>IX. Принятие новых семей</summary>
+    <div class="body">
+      <p>1. Новая семья может быть принята в Альянс по результатам рассмотрения её кандидатуры.</p>
+      <p>2. При рассмотрении учитываются репутация семьи, активность, адекватность руководства, готовность соблюдать договорённости Альянса и совместимость с принципами «Confederazione».</p>
+      <p>3. Окончательный порядок принятия новых семей устанавливается отдельным решением Альянса.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>X. Прекращение участия семьи в альянсе</summary>
+    <div class="body">
+      <p>1. Семья вправе добровольно выйти из Альянса.</p>
+      <p>2. Семья может быть исключена за систематическое нарушение договорённостей, действия, наносящие существенный ущерб Альянсу, неоднократное нарушение принципов взаимодействия либо длительное отсутствие участия в деятельности Альянса.</p>
+      <p>3. Порядок исключения и принятия окончательного решения устанавливается отдельным разделом Положения.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>XI. Заключительные положения</summary>
+    <div class="body">
+      <p>1. Настоящее Положение определяет основные принципы устройства и функционирования Альянса «Confederazione».</p>
+      <p>2. Изменения и дополнения в Положение вносятся в установленном порядке.</p>
+      <p>3. Вопросы, не урегулированные настоящим Положением, решаются путём переговоров между руководством семей и Координатором.</p>
+      <p>4. Участие в Альянсе означает согласие семьи с настоящим Положением.</p>
+    </div>
+  </details>
+</section>
+
+<section id="al-council">
+  <h2>Совет Альянса I созыва</h2>
+  <div class="pills"><button class="pill" data-go="alliance">← Альянс</button><button class="pill" data-go="al-charter">Положение</button><button class="pill on" data-go="al-council">Совет</button><button class="pill" data-go="al-leaders">Руководство семей</button></div>
+  <div class="card coord"><span class="crole">Постоянный Координатор Альянса</span><div class="cname">Taiga Russo</div></div>
+  <div class="fams">
+    <div class="card fam"><div class="fh"><span class="fe">💜</span><b>Представители семьи Russo</b></div><div class="row"><span class="rn">Frisk Russo</span><span class="chip ">Советник Альянса</span></div><div class="row"><span class="rn">Vladislav Russo</span><span class="chip soft">Помощник Советника Альянса</span></div></div>
+    <div class="card fam"><div class="fh"><span class="fe">✈️</span><b>Представители семьи Embraer</b></div><div class="row"><span class="rn">Dimerle Adams</span><span class="chip ">Советник Альянса</span></div><div class="row"><span class="rn">Aiden Moralis</span><span class="chip soft">Помощник Советника Альянса</span></div></div>
+    <div class="card fam"><div class="fh"><span class="fe">🌶️</span><b>Представители семьи Peppers</b></div><div class="row"><span class="rn">John Astor</span><span class="chip ">Советник Альянса</span></div><div class="row"><span class="rn">Lapo Pepper</span><span class="chip soft">Помощник Советника Альянса</span></div></div>
+  </div>
+</section>
+
+<section id="al-leaders">
+  <h2>Руководство других семей</h2>
+  <div class="pills"><button class="pill" data-go="alliance">← Альянс</button><button class="pill" data-go="al-charter">Положение</button><button class="pill" data-go="al-council">Совет</button><button class="pill on" data-go="al-leaders">Руководство семей</button></div>
+  <div class="fams">
+    <div class="card fam"><div class="fh"><span class="fe">✈️</span><b>Embraer</b></div><div class="row"><span class="rn">Villy Embraer</span><span class="chip ">лидер семьи Embraer</span></div><div class="row"><span class="rn">Valera Embraer</span><span class="chip ">Совладелец семьи Embraer</span></div><div class="row"><span class="rn">Dimerle Adams</span><span class="chip soft">заместитель семьи Embraer</span></div><div class="row"><span class="rn">Lucifer Embraer</span><span class="chip soft">заместитель семьи Embraer</span></div></div>
+    <div class="card fam"><div class="fh"><span class="fe">🌶️</span><b>Peppers</b></div><div class="row"><span class="rn">Lapo Pepper</span><span class="chip ">лидер семьи Peppers</span></div><div class="row"><span class="rn">Alberto Pepper</span><span class="chip soft">заместитель семьи Peppers</span></div><div class="row"><span class="rn">John Astor</span><span class="chip soft">заместитель семьи Peppers</span></div></div>
   </div>
 </section>
 
@@ -833,7 +1038,7 @@ const burger = document.getElementById("burger");
 const ink = document.getElementById("ink");
 function moveInk(){
   const a = document.querySelector("nav button.active");
-  if(!a) return;
+  if(!a){ ink.style.width = "0px"; return; }
   ink.style.left = (a.offsetLeft + 11) + "px";
   ink.style.width = (a.offsetWidth - 22) + "px";
 }
