@@ -40,7 +40,8 @@ nav button.active{color:#fff;text-shadow:0 0 12px rgba(180,77,255,.9)}
   .burger{display:block}
   .ink{display:none}
   nav{position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:2px;padding:0 16px;background:rgba(5,5,7,.96);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease,opacity .3s ease,padding .4s ease}
-  .top.open nav{max-height:420px;opacity:1;padding:10px 16px 16px}
+  .top.open nav{max-height:calc(100vh - 64px);max-height:calc(100dvh - 64px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;opacity:1;padding:10px 16px 16px}
+  nav button{flex-shrink:0}
   nav button{text-align:left;font-size:16px;padding:13px 14px}
   nav button.active{background:rgba(180,77,255,.14);box-shadow:inset 3px 0 0 var(--neon)}
 }
@@ -54,7 +55,8 @@ h1.hero{text-align:center;font-size:clamp(28px,7vw,52px);font-weight:700;margin:
 h2{font-size:26px;margin-bottom:20px;color:#fff;text-shadow:0 0 12px rgba(180,77,255,.7)}
 h3{font-size:17px;margin:22px 0 8px;color:var(--neon)}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:14px}
-.card:hover{border-color:rgba(180,77,255,.5)}
+@media (hover:hover){.card:hover{border-color:rgba(180,77,255,.5)}}
+*{-webkit-tap-highlight-color:transparent}
 p{margin-bottom:10px}
 .muted{color:var(--muted);font-size:14px}
 details{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:12px}
@@ -86,9 +88,6 @@ th{color:var(--neon);font-weight:600}
 .member .role{color:var(--muted);font-size:14px;margin:6px 0 10px}
 .member.supreme{border-color:rgba(180,77,255,.55);box-shadow:0 0 18px rgba(180,77,255,.2)}
 .member.honor{border-color:rgba(212,175,55,.45)}
-.member.honor:hover,.member.honor:active{border-color:#d4af37;box-shadow:0 0 22px rgba(212,175,55,.5),inset 0 0 14px rgba(212,175,55,.12)}
-.member.supreme:active{border-color:#d58bff;box-shadow:0 0 30px rgba(190,100,255,.75),inset 0 0 14px rgba(180,77,255,.18)}
-.member:not(.supreme):not(.honor):active{border-color:rgba(180,77,255,.5)}
 .mark{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
 .mark.purple{color:var(--neon);text-shadow:0 0 8px rgba(180,77,255,.8)}
 .mark.gold{color:#d4af37}
@@ -129,7 +128,15 @@ h1.hero .heart{display:inline-block;text-shadow:none;filter:drop-shadow(0 0 8px 
 /* карточки состава: подписи в один ряд */
 .member{display:flex;flex-direction:column;align-items:center}
 .member .role{flex:1}
-.member.supreme:hover{border-color:#d58bff;box-shadow:0 0 30px rgba(190,100,255,.75),inset 0 0 14px rgba(180,77,255,.18)}
+/* подсветка карточек состава: на мыши при наведении, на телефоне только пока нажата */
+.member:not(.supreme):not(.honor):active{border-color:rgba(180,77,255,.6);box-shadow:0 0 16px rgba(180,77,255,.28)}
+.member.supreme:active{border-color:var(--neon);box-shadow:0 0 28px rgba(180,77,255,.65),inset 0 0 16px rgba(180,77,255,.15)}
+.member.honor:active{border-color:#d4af37;box-shadow:0 0 22px rgba(212,175,55,.5),inset 0 0 14px rgba(212,175,55,.12)}
+@media (hover:hover){
+  .member:not(.supreme):not(.honor):hover{border-color:rgba(180,77,255,.6);box-shadow:0 0 16px rgba(180,77,255,.28)}
+  .member.supreme:hover{border-color:var(--neon);box-shadow:0 0 28px rgba(180,77,255,.65),inset 0 0 16px rgba(180,77,255,.15)}
+  .member.honor:hover{border-color:#d4af37;box-shadow:0 0 22px rgba(212,175,55,.5),inset 0 0 14px rgba(212,175,55,.12)}
+}
 @media (prefers-reduced-motion:reduce){details[open]>.body{animation:none}.card,details,.fact,.tile,nav button,summary{transition:none}}
 /* шрифты */
 body{font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
