@@ -36,7 +36,7 @@ nav button.active{color:#fff;text-shadow:0 0 12px rgba(180,77,255,.9)}
 .burger[aria-expanded="true"] span:nth-child(1){top:20px;transform:rotate(45deg)}
 .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
 .burger[aria-expanded="true"] span:nth-child(3){top:20px;transform:rotate(-45deg)}
-@media (max-width:1319px){
+@media (max-width:1399px){
   .burger{display:block}
   .ink{display:none}
   nav{position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:2px;padding:0 16px;background:rgba(5,5,7,.96);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease,opacity .3s ease,padding .4s ease}
@@ -274,6 +274,52 @@ h1.hero.alhero{margin-top:4vh;letter-spacing:.22em;font-size:clamp(26px,8vw,52px
 .chip.soft{border-color:var(--line);color:var(--muted);background:transparent}
 .coord{text-align:center;border-color:rgba(180,77,255,.6);box-shadow:0 0 22px rgba(180,77,255,.25)}
 .coord .cname{font-size:26px;margin-top:4px;text-shadow:0 0 14px rgba(180,77,255,.6)}
+/* аккаунты */
+[hidden]{display:none!important}
+.authbox{position:relative;margin-left:14px}
+.authbtn{background:transparent;border:1px solid var(--neon);color:#fff;padding:8px 16px;border-radius:999px;font:inherit;font-size:14px;cursor:pointer;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;box-shadow:0 0 12px rgba(180,77,255,.35);transition:box-shadow .3s,background-color .3s}
+.authbtn:hover{box-shadow:0 0 22px rgba(180,77,255,.65);background:rgba(180,77,255,.12)}
+.umenu{position:absolute;right:0;top:calc(100% + 12px);min-width:190px;background:rgba(10,8,16,.97);border:1px solid var(--line);border-radius:12px;padding:6px;display:flex;flex-direction:column;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .25s ease,transform .25s ease;box-shadow:0 0 24px rgba(180,77,255,.2)}
+.umenu.open{opacity:1;pointer-events:auto;transform:none}
+.umenu button{text-align:left;background:transparent;border:0;color:var(--text);padding:10px 12px;border-radius:8px;font:inherit;cursor:pointer;transition:background-color .2s}
+.umenu button:hover{background:rgba(180,77,255,.14)}
+.umenu .danger{color:#ff8aa2}
+@media (min-width:1400px){nav{margin-left:auto}}
+@media (max-width:1399px){.authbox{margin-left:auto}.burger{margin-left:10px}}
+@media (max-width:480px){.brand{font-size:13px;letter-spacing:.14em}.brand span{letter-spacing:.14em}.authbtn{padding:7px 12px;max-width:110px}}
+.form{display:grid;gap:14px;max-width:520px;margin-bottom:14px}
+.form label{display:grid;gap:6px;font-size:13px;color:var(--muted)}
+.form input,.form textarea{background:#08060d;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:11px 13px;font:inherit;font-size:16px;transition:border-color .3s,box-shadow .3s;width:100%}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--neon);box-shadow:0 0 14px rgba(180,77,255,.4)}
+.form textarea{resize:vertical}
+.btn{background:linear-gradient(120deg,#7a2fd0,#b44dff);border:0;color:#fff;font:inherit;font-weight:600;padding:12px 18px;border-radius:10px;cursor:pointer;transition:box-shadow .3s,transform .3s,opacity .3s;box-shadow:0 0 16px rgba(180,77,255,.4)}
+.btn:hover{box-shadow:0 0 28px rgba(180,77,255,.7);transform:translateY(-1px)}
+.btn:disabled{opacity:.5;cursor:default;transform:none}
+.btn.ghost{background:transparent;border:1px solid var(--line);box-shadow:none;color:var(--text)}
+.btn.ghost:hover{border-color:var(--neon);box-shadow:0 0 14px rgba(180,77,255,.4)}
+.btn.sm{padding:7px 13px;font-size:13px}
+.gated-off{display:none!important}
+.form select{background:#08060d;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:11px 13px;font:inherit;font-size:16px;width:100%;transition:border-color .3s,box-shadow .3s}
+.form select:focus{outline:none;border-color:var(--neon);box-shadow:0 0 14px rgba(180,77,255,.4)}
+.form .hint{font-size:12px;color:var(--muted);line-height:1.5;margin:-2px 0 0}
+.form input[readonly]{opacity:.6}
+.cta{max-width:640px;margin:22px auto 0;text-align:center}
+.cta p{margin:0 0 12px;color:var(--muted)}
+.urow .who a{color:var(--neon);text-decoration:none;word-break:break-all}
+.msg{min-height:22px;font-size:14px;margin-top:12px}
+.msg.err{color:#ff7b9a}.msg.ok{color:#7be0a1}
+.cab-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.chip.ok{border-color:rgba(123,224,161,.6);color:#a8f0c6;background:rgba(123,224,161,.08)}
+.chip.wait{border-color:rgba(255,200,87,.6);color:#ffd88a;background:rgba(255,200,87,.08)}
+.chip.lead{border-color:var(--neon);color:#fff;background:rgba(180,77,255,.25)}
+.post h3{margin:0 0 4px;font-family:"Playfair Display",Georgia,serif;font-size:20px;color:#fff}
+.post .meta{font-size:12px;color:var(--muted);margin-bottom:10px}
+.post .txt{white-space:pre-wrap;word-break:break-word;font-size:15px;margin:0 0 10px}
+.urow{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.urow .who b{color:#fff;font-size:17px}
+.urow .who span{display:block;font-size:13px;color:var(--muted)}
+.urow .acts{display:flex;gap:8px;flex-wrap:wrap}
+.lock{text-align:center;padding:26px 20px}
 .oath{font-style:italic;border-left:3px solid var(--neon);padding-left:16px}
 footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0}
 </style>
@@ -296,6 +342,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0}
       <button data-p="ach-posts">Достижения</button>
       <i class="ink" id="ink"></i>
     </nav>
+    <div class="authbox"><button class="authbtn" id="authBtn" type="button">Войти</button><div class="umenu" id="umenu"></div></div>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -308,6 +355,11 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0}
   <p class="tagline">Arizona RP · Tucson</p>
   <div class="divider"></div>
   <p class="motto">Che Dio protegga la famiglia Russo</p>
+
+  <div class="card cta" id="loginCta">
+    <p id="ctaText"></p>
+    <button class="btn" type="button" id="ctaBtn">Войти или зарегистрироваться</button>
+  </div>
 
   <div class="facts">
     <div class="fact"><span>Основана</span><b>04.11.2020</b></div>
@@ -822,6 +874,79 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0}
   </div>
 </section>
 
+<!-- АККАУНТЫ -->
+<section id="auth">
+  <h2>Аккаунт</h2>
+  <p class="muted" style="margin-bottom:16px">Вход и регистрация. Главную страницу можно смотреть без аккаунта, остальные разделы открывает руководство после проверки заявки.</p>
+  <div class="pills"><button class="pill on" type="button" data-tab="login">Вход</button><button class="pill" type="button" data-tab="signup">Регистрация</button></div>
+
+  <form class="card form" id="loginForm" autocomplete="on">
+    <label>Почта<input type="email" id="liEmail" autocomplete="email" required></label>
+    <label>Пароль<input type="password" id="liPass" autocomplete="current-password" required></label>
+    <button class="btn" type="submit">Войти</button>
+  </form>
+
+  <form class="card form" id="signupForm" autocomplete="on" hidden>
+    <label>Nick_Name<input type="text" id="suNick" maxlength="40" placeholder="Например, Taiga_Russo" required></label>
+    <label>Почта<input type="email" id="suEmail" autocomplete="email" required></label>
+    <label>Пароль (не короче 8 символов)<input type="password" id="suPass" autocomplete="new-password" minlength="8" required></label>
+    <label>Кем вы являетесь
+      <select id="suWho" required>
+        <option value="">Выберите…</option>
+        <option value="alliance">Член альянса</option>
+        <option value="family">Член семьи</option>
+        <option value="guest">Гость</option>
+      </select>
+    </label>
+    <label>Discord ID<input type="text" id="suDid" inputmode="numeric" pattern="[0-9]{17,20}" maxlength="20" placeholder="Например, 123456789012345678" required></label>
+    <p class="hint">Это числовой ID, а не ник: тег можно сменить, ID остаётся. В Discord: Настройки → Расширенные → включите «Режим разработчика», затем правой кнопкой по своему профилю → «Копировать ID пользователя».</p>
+    <p class="hint">Руководство проверит заявку и откроет доступ. Выбранный статус проверяется вручную, поэтому указывайте правду.</p>
+    <button class="btn" type="submit">Отправить заявку</button>
+  </form>
+  <p class="msg" id="authMsg" role="status"></p>
+</section>
+
+<section id="cabinet">
+  <h2>Кабинет</h2>
+  <div class="card cab">
+    <div class="cab-top"><div><span class="crole">Почта</span><div class="cname" id="cabEmail" style="font-size:18px"></div><div class="muted" id="cabClaimed" style="margin-top:6px"></div></div><span class="chip" id="cabRole"></span></div>
+    <p class="muted" id="cabHint" style="margin:12px 0 0"></p>
+  </div>
+  <form class="card form" id="cabForm">
+    <label>Nick_Name<input type="text" id="cabNick" maxlength="40" required></label>
+    <label>Discord ID<input type="text" id="cabDid" inputmode="numeric" pattern="[0-9]{17,20}" maxlength="20" required></label>
+    <p class="hint" id="cabDidHint"></p>
+    <button class="btn" type="submit">Сохранить</button>
+  </form>
+  <button class="btn ghost" type="button" id="cabOut">Выйти из аккаунта</button>
+  <p class="msg" id="cabMsg" role="status"></p>
+</section>
+
+<section id="locked">
+  <h2>Нет доступа</h2>
+  <div class="card lock" id="lockedBox"></div>
+  <div class="pills"><button class="pill" data-go="home">← Главная</button><button class="pill" data-go="cabinet">Кабинет</button></div>
+</section>
+
+<section id="private">
+  <h2>Для своих</h2>
+  <p class="muted" style="margin-bottom:16px">Закрытый раздел: записи видят только члены семьи</p>
+  <form class="card form" id="postForm" hidden>
+    <label>Заголовок<input type="text" id="postTitle" maxlength="120" required></label>
+    <label>Текст<textarea id="postBody" rows="5" maxlength="5000" required></textarea></label>
+    <button class="btn" type="submit">Опубликовать</button>
+  </form>
+  <div id="privBox"></div>
+  <p class="msg" id="privMsg" role="status"></p>
+</section>
+
+<section id="admin">
+  <h2>Заявки и доступ</h2>
+  <p class="muted" style="margin-bottom:16px">Сверьте Discord ID и выданный статус, затем выдайте доступ. Новые заявки сверху.</p>
+  <div id="adminBox"></div>
+  <p class="msg" id="adminMsg" role="status"></p>
+</section>
+
 <!-- НАПРАВЛЕНИЯ И ДОЛЖНОСТИ -->
 <section id="roles">
   <h2>Направления и должности</h2>
@@ -1031,6 +1156,357 @@ document.querySelectorAll(".shot").forEach(i => i.addEventListener("click", () =
 lb.addEventListener("click", () => lb.classList.remove("open"));
 document.addEventListener("keydown", e => { if (e.key === "Escape") lb.classList.remove("open"); });
 
+/* ===== АККАУНТЫ (Supabase) ===== */
+const SB_URL = "https://uadfzvwhdzhfoxeatzur.supabase.co";
+const SB_KEY = "sb_publishable_oL-3Uf1U93TOOafoWmKCjA_jJJPSjDq";
+const SKEY = "russo_session";
+const ROLE_NAME = { pending: "Ожидает проверки", guest: "Гость", ally: "Член альянса", member: "Член семьи", leader: "Руководство" };
+const CLAIM_NAME = { family: "Член семьи", alliance: "Член альянса", guest: "Гость" };
+let authReady = false;
+let session = null, profile = null;
+try { session = JSON.parse(localStorage.getItem(SKEY) || "null"); } catch (e) { session = null; }
+function saveSession(v) {
+  session = v;
+  try { v ? localStorage.setItem(SKEY, JSON.stringify(v)) : localStorage.removeItem(SKEY); } catch (e) {}
+}
+const isMember = () => !!profile && (profile.role === "member" || profile.role === "leader");
+const isLeader = () => !!profile && profile.role === "leader";
+const myRole = () => (profile && profile.role) || "pending";
+const ALL4 = ["ally", "member", "leader"], WIDE = ["guest", "ally", "member", "leader"], FAM = ["member", "leader"];
+function needOf(id) {
+  if (id === "charter" || id === "info" || id === "ranks" || id === "alliance" || id.indexOf("al-") === 0) return ALL4;
+  if (id === "diplomacy" || id.indexOf("ach-") === 0) return WIDE;
+  if (id === "roles" || id === "members" || id === "private") return FAM;
+  if (id === "admin") return ["leader"];
+  return null;
+}
+/* "ok" | "login" | "wait" | "locked" */
+function gate(id) {
+  if (id === "cabinet") return session ? "ok" : "login";
+  const need = needOf(id);
+  if (!need) return "ok";
+  if (!session) return "login";
+  if (!authReady) return "wait";
+  return need.indexOf(myRole()) !== -1 ? "ok" : "locked";
+}
+
+function humanError(d) {
+  const raw = d && (d.msg || d.error_description || d.message || d.error) || "";
+  const m = String(raw).toLowerCase();
+  if (m.includes("invalid login")) return "Неверная почта или пароль.";
+  if (m.includes("already registered") || m.includes("already been registered")) return "Эта почта уже зарегистрирована. Попробуйте войти.";
+  if (m.includes("email not confirmed")) return "Подтвердите почту: перейдите по ссылке из письма.";
+  if (m.includes("rate limit") || m.includes("too many")) return "Слишком много попыток. Подождите немного и повторите.";
+  if (m.includes("password") && (m.includes("least") || m.includes("short") || m.includes("weak"))) return "Пароль слишком простой или короткий (нужно минимум 8 символов).";
+  if (m.includes("valid email") || m.includes("invalid email")) return "Проверьте адрес почты.";
+  if (m.includes("not allowed")) return "Недостаточно прав.";
+  if (m.includes("discord id is locked")) return "Discord ID уже подтверждён руководством. Для смены напишите руководству.";
+  if (m.includes("bad discord id")) return "Discord ID должен состоять только из цифр (17–20 знаков).";
+  if (m.includes("jwt") || m.includes("expired")) return "Сессия истекла. Войдите заново.";
+  return raw ? "Ошибка: " + raw : "Что-то пошло не так. Попробуйте ещё раз.";
+}
+async function sb(path, opt) {
+  opt = opt || {};
+  const headers = { apikey: SB_KEY, "Content-Type": "application/json" };
+  if (opt.token) headers.Authorization = "Bearer " + opt.token;
+  let res;
+  try {
+    res = await fetch(SB_URL + path, { method: opt.method || "GET", headers: headers, body: opt.body ? JSON.stringify(opt.body) : undefined });
+  } catch (e) { throw new Error("Нет связи с сервером. Проверьте интернет."); }
+  const txt = await res.text();
+  let data = null;
+  if (txt) { try { data = JSON.parse(txt); } catch (e) { data = txt; } }
+  if (!res.ok) throw new Error(humanError(data));
+  return data;
+}
+function normSession(r) {
+  return { access_token: r.access_token, refresh_token: r.refresh_token,
+    expires_at: r.expires_at || Math.floor(Date.now() / 1000) + (r.expires_in || 3600), user: r.user };
+}
+async function getToken() {
+  if (!session) return null;
+  if (session.expires_at && session.expires_at - 60 < Date.now() / 1000) {
+    try {
+      const r = await sb("/auth/v1/token?grant_type=refresh_token", { method: "POST", body: { refresh_token: session.refresh_token } });
+      saveSession(normSession(r));
+    } catch (e) { saveSession(null); profile = null; updateAuthUI(); return null; }
+  }
+  return session.access_token;
+}
+async function rest(path, opt) {
+  const t = await getToken();
+  if (!t) throw new Error("Нужно войти в аккаунт.");
+  return sb("/rest/v1" + path, Object.assign({}, opt || {}, { token: t }));
+}
+async function loadProfile() {
+  if (!session) { profile = null; authReady = true; return; }
+  try {
+    const rows = await rest("/profiles?select=*&id=eq." + encodeURIComponent(session.user.id));
+    profile = (rows && rows[0]) || null;
+  } catch (e) { profile = null; }
+  authReady = true;
+}
+function say(id, text, kind) {
+  const el = document.getElementById(id);
+  el.textContent = text || "";
+  el.className = "msg" + (kind ? " " + kind : "");
+}
+function busy(form, on) { form.querySelectorAll("button").forEach(b => { b.disabled = on; }); }
+function el(tag, cls, text) {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text != null) n.textContent = text;
+  return n;
+}
+
+function goTo(id) { if (location.hash.slice(1) === id) show(id); else location.hash = id; }
+
+/* шапка: кнопка входа и меню аккаунта */
+const authBtn = document.getElementById("authBtn");
+const umenu = document.getElementById("umenu");
+function updateAuthUI() { renderMenu(); updateNav(); updateCta(); }
+function updateNav() {
+  const hide = !!session && authReady;
+  document.querySelectorAll("nav button[data-p]").forEach(b => { b.hidden = hide && gate(b.dataset.p) !== "ok"; });
+  document.querySelectorAll("[data-go]").forEach(t => { t.classList.toggle("gated-off", hide && gate(t.dataset.go) !== "ok"); });
+  if (typeof moveInk === "function" && typeof ink !== "undefined") moveInk();
+}
+function updateCta() {
+  const c = document.getElementById("loginCta"), t = document.getElementById("ctaText"), b = document.getElementById("ctaBtn");
+  if (!session) {
+    t.textContent = "Остальные разделы сайта открываются после регистрации и проверки заявки руководством семьи.";
+    b.textContent = "Войти или зарегистрироваться"; c.hidden = false;
+  } else if (authReady && myRole() === "pending") {
+    t.textContent = "Ваша заявка на проверке. Руководство сверит Discord ID и откроет доступ.";
+    b.textContent = "Открыть кабинет"; c.hidden = false;
+  } else c.hidden = true;
+}
+document.getElementById("ctaBtn").addEventListener("click", () => goTo(session ? "cabinet" : "auth"));
+function renderMenu() {
+  umenu.innerHTML = "";
+  umenu.classList.remove("open");
+  if (!session) { authBtn.textContent = "Войти"; authBtn.dataset.mode = "in"; return; }
+  authBtn.textContent = (profile && profile.nickname) || "Аккаунт";
+  authBtn.dataset.mode = "user";
+  const items = [["cabinet", "Кабинет"]];
+  if (isMember()) items.push(["private", "Для своих"]);
+  if (isLeader()) items.push(["admin", "Заявки и доступ"]);
+  items.forEach(it => {
+    const b = el("button", "", it[1]);
+    b.type = "button";
+    b.addEventListener("click", () => { umenu.classList.remove("open"); goTo(it[0]); });
+    umenu.appendChild(b);
+  });
+  const out = el("button", "danger", "Выйти");
+  out.type = "button";
+  out.addEventListener("click", logout);
+  umenu.appendChild(out);
+}
+authBtn.addEventListener("click", e => {
+  e.stopPropagation();
+  if (authBtn.dataset.mode === "user") umenu.classList.toggle("open");
+  else location.hash = "auth";
+});
+document.addEventListener("click", e => { if (!umenu.contains(e.target)) umenu.classList.remove("open"); });
+
+async function logout() {
+  try { const t = await getToken(); if (t) await sb("/auth/v1/logout", { method: "POST", token: t }); } catch (e) {}
+  saveSession(null); profile = null; updateAuthUI();
+  goTo("home");
+}
+
+/* вкладки вход / регистрация */
+const loginForm = document.getElementById("loginForm");
+const signupForm = document.getElementById("signupForm");
+document.querySelectorAll("[data-tab]").forEach(t => t.addEventListener("click", () => {
+  document.querySelectorAll("[data-tab]").forEach(x => x.classList.toggle("on", x === t));
+  const su = t.dataset.tab === "signup";
+  loginForm.hidden = su; signupForm.hidden = !su; say("authMsg", "");
+}));
+
+loginForm.addEventListener("submit", async e => {
+  e.preventDefault(); say("authMsg", "");
+  busy(loginForm, true);
+  try {
+    const r = await sb("/auth/v1/token?grant_type=password", { method: "POST",
+      body: { email: document.getElementById("liEmail").value.trim(), password: document.getElementById("liPass").value } });
+    saveSession(normSession(r));
+    await loadProfile(); updateAuthUI();
+    loginForm.reset();
+    goTo("cabinet");
+  } catch (err) { say("authMsg", err.message, "err"); }
+  busy(loginForm, false);
+});
+
+signupForm.addEventListener("submit", async e => {
+  e.preventDefault(); say("authMsg", "");
+  const did = document.getElementById("suDid").value.trim();
+  if (!/^[0-9]{17,20}$/.test(did)) { say("authMsg", "Discord ID должен состоять только из цифр (17–20 знаков).", "err"); return; }
+  if (!document.getElementById("suWho").value) { say("authMsg", "Выберите, кем вы являетесь.", "err"); return; }
+  busy(signupForm, true);
+  try {
+    const r = await sb("/auth/v1/signup", { method: "POST", body: {
+      email: document.getElementById("suEmail").value.trim(),
+      password: document.getElementById("suPass").value,
+      data: { nickname: document.getElementById("suNick").value.trim(), discord_id: document.getElementById("suDid").value.trim(), claimed: document.getElementById("suWho").value } } });
+    signupForm.reset();
+    if (r && r.access_token) {
+      saveSession(normSession(r));
+      await loadProfile(); updateAuthUI();
+      goTo("cabinet");
+    } else {
+      say("authMsg", "Заявка отправлена. Подтвердите почту по ссылке из письма, затем войдите. Доступ откроет руководство после проверки.", "ok");
+    }
+  } catch (err) { say("authMsg", err.message, "err"); }
+  busy(signupForm, false);
+});
+
+/* кабинет */
+async function renderCabinet() {
+  say("cabMsg", "");
+  await loadProfile(); updateAuthUI();
+  document.getElementById("cabEmail").textContent = (session && session.user && session.user.email) || "";
+  const chip = document.getElementById("cabRole");
+  const hint = document.getElementById("cabHint");
+  if (!profile) { chip.textContent = "—"; chip.className = "chip"; hint.textContent = "Не удалось загрузить профиль. Проверьте, что в базе выполнен файл schema.sql."; return; }
+  chip.textContent = ROLE_NAME[profile.role] || profile.role;
+  chip.className = "chip " + (profile.role === "leader" ? "lead" : profile.role === "pending" ? "wait" : "ok");
+  document.getElementById("cabClaimed").textContent = "Вы указали: " + (CLAIM_NAME[profile.claimed] || "—");
+  hint.textContent = profile.role === "pending" ? "Заявка на проверке. Руководство сверит Discord ID и откроет доступ."
+    : profile.role === "guest" ? "Доступ гостя: главная, дипломатия и достижения."
+    : profile.role === "ally" ? "Доступ члена альянса: страница альянса, устав, основная информация, дипломатия, ранговая система и достижения."
+    : profile.role === "member" ? "Доступ члена семьи: открыт весь сайт, включая раздел «Для своих»."
+    : "Вы руководство: доступны все разделы, публикации в «Для своих» и выдача доступа в «Заявках».";
+  document.getElementById("cabNick").value = profile.nickname || "";
+  const di = document.getElementById("cabDid");
+  di.value = profile.discord_id || "";
+  const lockedId = profile.role !== "pending";
+  di.readOnly = lockedId;
+  document.getElementById("cabDidHint").textContent = lockedId ? "Discord ID подтверждён руководством. Для смены напишите руководству." : "Пока заявка на проверке, Discord ID можно поправить.";
+}
+document.getElementById("cabForm").addEventListener("submit", async e => {
+  e.preventDefault(); say("cabMsg", "");
+  const f = e.target; busy(f, true);
+  try {
+    if (!/^[0-9]{17,20}$/.test(document.getElementById("cabDid").value.trim())) throw new Error("Discord ID должен состоять только из цифр (17–20 знаков).");
+    await rest("/profiles?id=eq." + encodeURIComponent(session.user.id), { method: "PATCH", body: {
+      nickname: document.getElementById("cabNick").value.trim(), discord_id: document.getElementById("cabDid").value.trim() } });
+    await loadProfile(); updateAuthUI();
+    say("cabMsg", "Сохранено.", "ok");
+  } catch (err) { say("cabMsg", err.message, "err"); }
+  busy(f, false);
+});
+document.getElementById("cabOut").addEventListener("click", logout);
+
+/* закрытый раздел */
+async function renderPrivate() {
+  say("privMsg", "");
+  await loadProfile(); updateAuthUI();
+  const box = document.getElementById("privBox");
+  const pf = document.getElementById("postForm");
+  box.innerHTML = ""; pf.hidden = true;
+  if (!isMember()) {
+    const c = el("div", "card lock");
+    c.appendChild(el("b", "", "Раздел закрыт"));
+    c.appendChild(el("p", "muted", "Он откроется после одобрения заявки руководством семьи."));
+    box.appendChild(c); return;
+  }
+  pf.hidden = !isLeader();
+  try {
+    const rows = await rest("/posts?select=*&order=created_at.desc");
+    if (!rows.length) { box.appendChild(el("p", "muted", "Записей пока нет.")); return; }
+    rows.forEach(p => {
+      const c = el("div", "card post");
+      c.appendChild(el("h3", "", p.title));
+      c.appendChild(el("div", "meta", new Date(p.created_at).toLocaleString("ru-RU")));
+      c.appendChild(el("p", "txt", p.body));
+      if (isLeader()) {
+        const d = el("button", "btn ghost sm", "Удалить"); d.type = "button";
+        d.addEventListener("click", async () => {
+          if (!confirm("Удалить запись?")) return;
+          try { await rest("/posts?id=eq." + p.id, { method: "DELETE" }); renderPrivate(); }
+          catch (err) { say("privMsg", err.message, "err"); }
+        });
+        c.appendChild(d);
+      }
+      box.appendChild(c);
+    });
+  } catch (err) { say("privMsg", err.message, "err"); }
+}
+document.getElementById("postForm").addEventListener("submit", async e => {
+  e.preventDefault(); say("privMsg", "");
+  const f = e.target; busy(f, true);
+  try {
+    await rest("/posts", { method: "POST", body: { title: document.getElementById("postTitle").value.trim(), body: document.getElementById("postBody").value.trim() } });
+    f.reset(); await renderPrivate();
+  } catch (err) { say("privMsg", err.message, "err"); }
+  busy(f, false);
+});
+
+/* заявки и доступ (только руководство) */
+async function renderAdmin() {
+  say("adminMsg", "");
+  await loadProfile(); updateAuthUI();
+  const box = document.getElementById("adminBox");
+  box.innerHTML = "";
+  if (!isLeader()) { const c = el("div", "card lock"); c.appendChild(el("b", "", "Только для руководства")); box.appendChild(c); return; }
+  try {
+    const rows = await rest("/profiles?select=id,nickname,discord_id,claimed,role,created_at&order=created_at.desc");
+    rows.sort((x, y) => (x.role === "pending" ? 0 : 1) - (y.role === "pending" ? 0 : 1));
+    const primary = { family: "member", alliance: "ally", guest: "guest" };
+    rows.forEach(u => {
+      const c = el("div", "card urow");
+      const who = el("div", "who");
+      who.appendChild(el("b", "", u.nickname || "(без ника)"));
+      who.appendChild(el("span", "", "Указал: " + (CLAIM_NAME[u.claimed] || "—")));
+      const d = el("span", "", "Discord ID: ");
+      if (u.discord_id) { const a = el("a", "", u.discord_id); a.href = "https://discord.com/users/" + encodeURIComponent(u.discord_id); a.target = "_blank"; a.rel = "noopener"; d.appendChild(a); }
+      else d.appendChild(document.createTextNode("—"));
+      who.appendChild(d);
+      c.appendChild(who);
+      const acts = el("div", "acts");
+      acts.appendChild(el("span", "chip " + (u.role === "leader" ? "lead" : u.role === "pending" ? "wait" : "ok"), ROLE_NAME[u.role] || u.role));
+      if (u.id === session.user.id) { acts.appendChild(el("span", "muted", "это вы")); }
+      else {
+        [["guest", "Гость"], ["ally", "Альянс"], ["member", "Семья"], ["leader", "Руководство"], ["pending", "Снять доступ"]].forEach(a => {
+          if (a[0] === u.role) return;
+          const b = el("button", "btn sm" + (primary[u.claimed] === a[0] && u.role === "pending" ? "" : " ghost"), a[1]); b.type = "button";
+          b.addEventListener("click", async () => {
+            if (a[0] === "leader" && !confirm("Выдать этому человеку права руководства?")) return;
+            if (a[0] === "member" && u.claimed !== "family" && !confirm("Человек указал «" + (CLAIM_NAME[u.claimed] || "—") + "», а не «Член семьи». Выдать доступ семьи?")) return;
+            try { await rest("/rpc/set_user_role", { method: "POST", body: { target: u.id, new_role: a[0] } }); renderAdmin(); }
+            catch (err) { say("adminMsg", err.message, "err"); }
+          });
+          acts.appendChild(b);
+        });
+      }
+      c.appendChild(acts);
+      box.appendChild(c);
+    });
+  } catch (err) { say("adminMsg", err.message, "err"); }
+}
+
+function renderLocked(g) {
+  const box = document.getElementById("lockedBox");
+  box.innerHTML = "";
+  if (g === "wait") { box.appendChild(el("b", "", "Проверяем доступ…")); return; }
+  box.appendChild(el("b", "", "Этот раздел вам недоступен"));
+  const r = myRole();
+  box.appendChild(el("p", "muted", !profile ? "Не удалось загрузить профиль. Обновите страницу или войдите заново."
+    : r === "pending" ? "Заявка ещё на проверке. Руководство откроет доступ после сверки Discord ID."
+    : "Для вашего статуса («" + (ROLE_NAME[r] || r) + "») этот раздел закрыт. Если это ошибка, напишите руководству."));
+}
+function onEnter(id) {
+  if (id === "cabinet") renderCabinet();
+  else if (id === "private") renderPrivate();
+  else if (id === "admin") renderAdmin();
+}
+async function bootAuth() {
+  await loadProfile();
+  updateAuthUI();
+  show(location.hash.slice(1) || "home");
+}
+
 /* ===== навигация ===== */
 const btns = document.querySelectorAll("nav button");
 const topBar = document.getElementById("top");
@@ -1049,10 +1525,14 @@ burger.addEventListener("click", () => {
 window.addEventListener("resize", moveInk);
 function show(id){
   if(!document.getElementById(id)) id = "home";
+  const g = gate(id);
+  if(g === "login") id = "auth";
+  else if(g === "locked" || g === "wait"){ renderLocked(g); id = "locked"; }
   document.querySelectorAll("section").forEach(s => s.classList.toggle("show", s.id === id));
   btns.forEach(b => b.classList.toggle("active", b.dataset.p === id || (id.indexOf("ach-") === 0 && b.dataset.p === "ach-posts")));
   window.scrollTo({top:0});
   moveInk();
+  onEnter(id);
   topBar.classList.remove("open");
   burger.setAttribute("aria-expanded","false");
 }
@@ -1061,6 +1541,7 @@ window.addEventListener("hashchange", () => show(location.hash.slice(1)));
 show(location.hash.slice(1) || "home");
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 window.addEventListener("load", () => setTimeout(() => window.scrollTo(0, 0), 0));
+bootAuth();
 </script>
 </body>
 </html>
